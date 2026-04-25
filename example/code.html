@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OvanZone | Pengalaman Musik Terbaik</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700;800;900&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0B0B0B;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(31, 31, 31, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .neon-glow-hover:hover {
+            box-shadow: 0 0 30px rgba(255, 106, 0, 0.3);
+        }
+        .stage-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(255, 106, 0, 0.05) 0%, rgba(11, 11, 11, 0) 70%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0B0B0B;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #FF6A00;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#e2bfb0",
+                    "on-surface": "#e2e2e2",
+                    "surface-container": "#1e2020",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#4a4949",
+                    "primary-container": "#ff6a00",
+                    "inverse-surface": "#e2e2e2",
+                    "primary-fixed-dim": "#ffb694",
+                    "on-tertiary-fixed": "#1b1b1c",
+                    "primary": "#ffb694",
+                    "on-secondary": "#313030",
+                    "secondary-fixed": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "on-tertiary": "#303030",
+                    "inverse-on-surface": "#2f3131",
+                    "on-primary-container": "#571f00",
+                    "primary-fixed": "#ffdbcc",
+                    "on-tertiary-container": "#313131",
+                    "on-primary-fixed": "#351000",
+                    "background": "#121414",
+                    "on-primary": "#571f00",
+                    "on-secondary-container": "#bab8b7",
+                    "outline": "#a98a7d",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface": "#121414",
+                    "on-primary-fixed-variant": "#7b2f00",
+                    "on-secondary-fixed-variant": "#474646",
+                    "tertiary": "#c8c6c5",
+                    "surface-container-lowest": "#0c0f0f",
+                    "secondary": "#c9c6c5",
+                    "surface-tint": "#ffb694",
+                    "on-error": "#690005",
+                    "surface-variant": "#333535",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "secondary-fixed-dim": "#c9c6c5",
+                    "surface-container-highest": "#333535",
+                    "surface-container-high": "#282a2b",
+                    "surface-bright": "#37393a",
+                    "outline-variant": "#5a4136",
+                    "surface-container-low": "#1a1c1c",
+                    "tertiary-container": "#9a9898",
+                    "inverse-primary": "#a14000",
+                    "on-background": "#e2e2e2",
+                    "surface-dim": "#121414"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "base": "8px",
+                    "lg": "48px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "margin": "32px",
+                    "grid_columns": "12",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "h3": ["Epilogue"],
+                    "h2": ["Epilogue"],
+                    "body-lg": ["Manrope"],
+                    "button": ["Epilogue"],
+                    "h1": ["Epilogue"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h3": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "h2": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "button": ["14px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "h1": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-zinc-950/80 backdrop-blur-lg border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] fixed top-0 w-full z-50">
+<nav class="flex justify-between items-center max-w-[1280px] mx-auto px-6 h-20">
+<div class="text-2xl font-black text-orange-600 tracking-tighter font-['Epilogue']">OvanZone</div>
+<div class="hidden md:flex gap-8 items-center font-['Epilogue'] tracking-tight">
+<a class="text-orange-500 border-b-2 border-orange-600 pb-1 hover:text-orange-500 transition-colors duration-300" href="#events">Acara</a>
+<a class="text-zinc-400 hover:text-white hover:text-orange-500 transition-colors duration-300" href="#history">Riwayat</a>
+<a class="text-zinc-400 hover:text-white hover:text-orange-500 transition-colors duration-300" href="#services">Layanan</a>
+<a class="text-zinc-400 hover:text-white hover:text-orange-500 transition-colors duration-300" href="#clients">Klien</a>
+<a class="text-zinc-400 hover:text-white hover:text-orange-500 transition-colors duration-300" href="#contact">Kontak</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 font-button text-button uppercase tracking-widest active:scale-95 transition-transform hover:shadow-[0_0_20px_rgba(255,106,0,0.5)]">
+                Beli Tiket
+            </button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 scale-105" data-alt="cinematic shot of a massive music festival stage at night with intense orange and purple spotlights and a dense crowd silhouette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeg4gKniH7iWdIAIyo5R8pMOV9AoG57fFn17fiybKNoWYY5tDXol7X6qAFNx6kcNsbkrY5KZ_YDxuZK31t4YJrHepPffzoTCb0qBBCLlX7kWzXWtUIZdlu4b2Es0GPpwx2d0GSxWIx6sIJOynqJ_evAS5PqzyUvEuZHiffQu9BxtRtcqapovGsIas1WDZmYR1uoPgPz-Ybaay9o4jlxYq8_Ali2fEIJhGkrN0OHzQPKH6MdUgXLTdaaq3hUFs-ps1JTATOpE7ZZTY"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0B0B0B]/40 to-[#0B0B0B]"></div>
+</div>
+<div class="relative z-10 max-w-[1280px] mx-auto px-6 text-center">
+<h1 class="font-h1 text-h1 text-white mb-6 max-w-4xl mx-auto uppercase">
+                RASAKAN EVENT MUSIK <span class="text-primary-container">TERBAIK</span>
+</h1>
+<p class="font-body-lg text-body-lg text-zinc-300 mb-10 max-w-2xl mx-auto">
+                Melampaui batas hiburan langsung. Temukan perjalanan sonik yang dikurasi dan atmosfer kehidupan malam yang eksklusif.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 font-button text-button uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,106,0,0.6)] transition-all duration-300">
+                    Jelajahi Acara
+                </button>
+<button class="border border-white/20 text-white px-10 py-5 font-button text-button uppercase tracking-widest hover:bg-white/5 transition-all duration-300">
+                    Tonton Cuplikan
+                </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+<span class="material-symbols-outlined text-4xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Upcoming Events -->
+<section class="py-xl relative overflow-hidden" id="events">
+<div class="stage-glow absolute top-0 left-0 w-full h-full -z-10"></div>
+<div class="max-w-[1280px] mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-h2 text-h2 text-white mb-2 uppercase">Acara Mendatang</h2>
+<div class="h-1 w-24 bg-primary-container"></div>
+</div>
+<a class="font-button text-button text-primary-container uppercase hover:underline" href="#">Lihat Semua</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Event Card 1 -->
+<div class="group relative bg-[#1F1F1F] overflow-hidden transition-all duration-500 neon-glow-hover">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="vibrant neon concert poster featuring an abstract DJ silhouette with glowing audio waves in orange and teal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIQswBT9gKHw8jT4atl1LPJ1jUaq7kijSKN4Dgw-9NmtOwxZCBh0Zj4GUy31i8YVdsbyw8hj4BfV0M5rX6kZb6NXW0pkg0-OD3TfxQfNY0ygcIvTLA_k6HeUiLc5meZ8-uDQZZlmbKpAIWHaKmbqo7ZFiWgQz2T3zO6T9r8KqZbuLNMdubmFj459ITJ-milmiwiR5sVAmGUYHCBhFBXs3cyup84yFtwdC4rg_RLiKE65XC0ODHh7d9Ohm69YYL8X_91f0_ihEtHvw"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 p-6 w-full">
+<div class="flex gap-2 mb-3">
+<span class="bg-primary-container text-[10px] font-bold text-on-primary-container px-2 py-1 uppercase">Techno</span>
+<span class="bg-zinc-800 text-[10px] font-bold text-white px-2 py-1 uppercase">HABIS</span>
+</div>
+<h3 class="font-h3 text-xl text-white mb-1">NEON VOID</h3>
+<p class="text-zinc-400 font-label-sm uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> 24 Okt • Berlin
+                        </p>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="group relative bg-[#1F1F1F] overflow-hidden transition-all duration-500 neon-glow-hover">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="luxury music event poster with elegant typography over a blurred background of a high-end rooftop lounge at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRFewSRVAQ8g4c5V-cxo4YmDAxdokmYTn4LS7ykN7RjxLYweU_PGQUXNjIar3KWO-HTAyYbS5fa5m56JXKW-t7Q1Z7NnMd1iB64Ztr9pWAahYhR5jG7S6Z_V6FdxY2FM9qpHCN5uaYxae5kJBGnWeYHaMa11Lhs_uTlymPmfTfk2m4OvTl-Z-8-jgfWYQvFDfHNVi-LVNoAbNhWTxIdWb5dCMREMKVhfx-PxCsNXjUM4cyvNgqaEAbkdMCv1YWv6yx6iI_R5OHXEY"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 p-6 w-full">
+<div class="flex gap-2 mb-3">
+<span class="bg-zinc-800 text-[10px] font-bold text-white px-2 py-1 uppercase">Live Jazz</span>
+</div>
+<h3 class="font-h3 text-xl text-white mb-1">VELVET RHYTHM</h3>
+<p class="text-zinc-400 font-label-sm uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> 02 Nov • Paris
+                        </p>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="group relative bg-[#1F1F1F] overflow-hidden transition-all duration-500 neon-glow-hover">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="underground rave scene with motion blur of dancing people under flickering orange strobe lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKG5IkfGL8pOwgrTZvDOGi6rAr7zW9OF1Zr7Kn9D7584BHPt_bb_OWJGR2XOK7abSEBWzsoqxdwyxoVnRELSdO-O0N34lL5Twz5iZoGxAJzUbvCE-tf25uGV1XejrWhyGH_KI91o4ph-gz8ArBTzIiqQojfTHtL6kp7qfYdWolTRsZ6m0bI2IJfskvyep-3aw_PxmmNlwOvLBg2-EmHj3BJrxIaK82q3zFtBM1uqJVu1_0zlZ3rZd2Bx-uS7MLGdJ2xrmyY5PUKPI"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 p-6 w-full">
+<div class="flex gap-2 mb-3">
+<span class="bg-primary-container text-[10px] font-bold text-on-primary-container px-2 py-1 uppercase">Electronic</span>
+</div>
+<h3 class="font-h3 text-xl text-white mb-1">KINETIC PULSE</h3>
+<p class="text-zinc-400 font-label-sm uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> 15 Nov • London
+                        </p>
+</div>
+</div>
+<!-- Event Card 4 -->
+<div class="group relative bg-[#1F1F1F] overflow-hidden transition-all duration-500 neon-glow-hover">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="outdoor summer festival sunset with large crowd hands in the air and a massive main stage in the distance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwFmG6LndnBD3doyMJL60r0AiN5e1_0mhjQyKJ1rsazqnmm8K3JpubZSGKRmxp9MTDEUBwm_hb9-voB7TH9N3kepZtHnaTIL5v-XKkl8ZZMboo1oEJrZf5gFkKq4Tc7K5gTIaPlvbqokbfyhK8vVmPI5264cr2nqwpTco0PTXqby341Eixurg7okPDTFYHf9j8zmpJ1ATBqxvYg9q6UqTz9bjnwrrUuCwkWwMNmf9-84sXhOwmGuw4QyDQuAvGUuonCOZyibM1QVA"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 p-6 w-full">
+<div class="flex gap-2 mb-3">
+<span class="bg-zinc-800 text-[10px] font-bold text-white px-2 py-1 uppercase">Alternative</span>
+</div>
+<h3 class="font-h3 text-xl text-white mb-1">ECHO FEST</h3>
+<p class="text-zinc-400 font-label-sm uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> 05 Des • NYC
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Event History Timeline -->
+<section class="py-xl bg-[#0B0B0B]" id="history">
+<div class="max-w-[1280px] mx-auto px-6">
+<h2 class="font-h2 text-h2 text-white mb-16 text-center uppercase tracking-tighter">Momen Legendaris</h2>
+<div class="relative">
+<!-- Timeline Line -->
+<div class="absolute left-1/2 -translate-x-1/2 h-full w-[1px] bg-white/10 hidden md:block"></div>
+<div class="space-y-md">
+<!-- History Item 1 -->
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/2 flex justify-end">
+<div class="glass-card p-base max-w-md w-full border-l-4 border-primary-container">
+<p class="text-primary-container font-bold mb-2">MUSIM PANAS 2023</p>
+<h4 class="font-h3 text-xl text-white mb-2">PANGGUNG THE ORACLE</h4>
+<p class="text-zinc-400 text-sm">Festival imersif 3 hari yang mendefinisikan ulang produksi audio-visual dengan suara 360 derajat.</p>
+</div>
+</div>
+<div class="md:w-1/2">
+<img class="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="atmospheric black and white photography of a massive festival main stage with complex geometric light designs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXYu41PLYk7WbDbaxhZdF6lGGQz66jS_inrt-mCrHbtv_C-Kji9dx9f51Ae2kZ8MNI4tufom5m_MQIKRc56iUVsA1ut-XDK6u2FbjT5sY7gJOLqNlj4eDXmGKLIvkvfqj9FiAUdD5U9tQoazexMz_64H7C9zGdyEGz8SAtqweSdRbqKg2i8B_uZoxzCRTaBCctTJCxgUu6Uq4J3KRmOdWKwGFDr2m8lny6zHPTwQGqmIR6pb8XtyfOBMPl0jF7kXmNCvv01URwbjk"/>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-10">
+<div class="md:w-1/2">
+<div class="glass-card p-base max-w-md w-full border-r-4 border-primary-container md:ml-auto">
+<p class="text-primary-container font-bold mb-2">MUSIM DINGIN 2022</p>
+<h4 class="font-h3 text-xl text-white mb-2">SESI SUBTERRANEAN</h4>
+<p class="text-zinc-400 text-sm">Acara gudang bawah tanah eksklusif yang menampilkan pionir techno eksperimental terkemuka.</p>
+</div>
+</div>
+<div class="md:w-1/2">
+<img class="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="gritty warehouse interior with industrial lighting and a glowing orange DJ booth at the center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPP9xLlD_0w0UThJWFpPASHLUf7pRPorD7gdNx5wlk4OpLVafO7O5lTFyf-0AAB-MSSm-bYlOt-QZpHciuAjjIa09crSKYraSaz5q6_58o_23o0jIA2uApcstVFXpLdCDB0KyZ1xSJulXPy0Q1XGGBycUY0GPcMh7c4GKS8ZwxilPOb0PSLvGVeJHenqH7G04wLdID1__En1l9PhbmDVcIpzwgTb3411gmjDgc9SWUxjw-EfrwBED53Hm8DMHhBGIU8BuNrgRk8sw"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services -->
+<section class="py-xl bg-[#0B0B0B] relative" id="services">
+<div class="max-w-[1280px] mx-auto px-6">
+<h2 class="font-h2 text-h2 text-white mb-12 uppercase">Layanan Kami</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Service 1 -->
+<div class="flex gap-6 items-start glass-card p-8 group hover:border-primary-container/30 transition-colors">
+<div class="bg-primary-container/10 p-4 rounded-xl text-primary-container">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">piano</span>
+</div>
+<div>
+<h4 class="font-h3 text-2xl text-white mb-3">Penyewaan Alat</h4>
+<p class="text-zinc-400">Solusi backline kelas atas untuk profesional tur. Dari synth vintage hingga grand piano premium.</p>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="flex gap-6 items-start glass-card p-8 group hover:border-primary-container/30 transition-colors">
+<div class="bg-primary-container/10 p-4 rounded-xl text-primary-container">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">celebration</span>
+</div>
+<div>
+<h4 class="font-h3 text-2xl text-white mb-3">Acara Pernikahan</h4>
+<p class="text-zinc-400">Kurasi musik khusus untuk pernikahan mewah. Kami membawa energi konser ke hari spesial Anda.</p>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="flex gap-6 items-start glass-card p-8 group hover:border-primary-container/30 transition-colors">
+<div class="bg-primary-container/10 p-4 rounded-xl text-primary-container">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">groups</span>
+</div>
+<div>
+<h4 class="font-h3 text-2xl text-white mb-3">Komunitas</h4>
+<p class="text-zinc-400">Mendukung artis lokal melalui workshop, malam open-mic, dan festival jejaring.</p>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="flex gap-6 items-start glass-card p-8 group hover:border-primary-container/30 transition-colors">
+<div class="bg-primary-container/10 p-4 rounded-xl text-primary-container">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">stadium</span>
+</div>
+<div>
+<h4 class="font-h3 text-2xl text-white mb-3">Konser Besar</h4>
+<p class="text-zinc-400">Manajemen produksi menyeluruh untuk acara skala stadion dan tur dunia.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Clients Section -->
+<section class="py-xl bg-[#0B0B0B]" id="clients">
+<div class="max-w-[1280px] mx-auto px-6">
+<h2 class="font-h2 text-h2 text-white mb-12 uppercase">Klien Kami</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60">
+<div class="flex justify-center p-4 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">
+<div class="text-white font-bold text-lg tracking-widest border-2 border-white/20 px-4 py-2">SONY MUSIC</div>
+</div>
+<div class="flex justify-center p-4 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">
+<div class="text-white font-bold text-lg tracking-widest border-2 border-white/20 px-4 py-2">UNIVERSAL</div>
+</div>
+<div class="flex justify-center p-4 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">
+<div class="text-white font-bold text-lg tracking-widest border-2 border-white/20 px-4 py-2">LOCAL FEST</div>
+</div>
+<div class="flex justify-center p-4 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">
+<div class="text-white font-bold text-lg tracking-widest border-2 border-white/20 px-4 py-2">WARNER</div>
+</div>
+<div class="flex justify-center p-4 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">
+<div class="text-white font-bold text-lg tracking-widest border-2 border-white/20 px-4 py-2">INDIE GIGS</div>
+</div>
+<div class="flex justify-center p-4 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">
+<div class="text-white font-bold text-lg tracking-widest border-2 border-white/20 px-4 py-2">EVENT X</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Map -->
+<section class="py-xl bg-[#0B0B0B]" id="contact">
+<div class="max-w-[1280px] mx-auto px-6">
+<div class="flex flex-col lg:flex-row gap-margin">
+<!-- Contact Form -->
+<div class="lg:w-1/2">
+<h2 class="font-h2 text-h2 text-white mb-8 uppercase">Hubungi Kami</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-zinc-500 font-label-sm uppercase mb-2">Nama</label>
+<input class="w-full bg-[#1F1F1F] border-white/10 text-white focus:border-primary-container focus:ring-0 transition-colors py-4" type="text"/>
+</div>
+<div>
+<label class="block text-zinc-500 font-label-sm uppercase mb-2">Email</label>
+<input class="w-full bg-[#1F1F1F] border-white/10 text-white focus:border-primary-container focus:ring-0 transition-colors py-4" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-zinc-500 font-label-sm uppercase mb-2">Tipe Proyek</label>
+<select class="w-full bg-[#1F1F1F] border-white/10 text-white focus:border-primary-container focus:ring-0 transition-colors py-4">
+<option>Produksi Konser</option>
+<option>Pemesanan Privat</option>
+<option>Inkuiri Penyewaan</option>
+</select>
+</div>
+<div>
+<label class="block text-zinc-500 font-label-sm uppercase mb-2">Pesan</label>
+<textarea class="w-full bg-[#1F1F1F] border-white/10 text-white focus:border-primary-container focus:ring-0 transition-colors py-4" rows="4"></textarea>
+</div>
+<button class="bg-primary-container text-on-primary-container w-full py-5 font-button text-button uppercase tracking-widest hover:shadow-[0_0_20px_rgba(255,106,0,0.4)] transition-all">
+                            Kirim Pesan
+                        </button>
+</form>
+</div>
+<!-- Info & Map -->
+<div class="lg:w-1/2 flex flex-col gap-6">
+<div class="glass-card p-8 flex flex-col md:flex-row gap-10 flex-grow">
+<div class="space-y-6">
+<h4 class="font-h3 text-xl text-white uppercase">Detail Kontak</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+<span class="text-zinc-300 group-hover:text-white transition-colors">hello@ovanzone.events</span>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="material-symbols-outlined text-primary-container">call</span>
+<span class="text-zinc-300 group-hover:text-white transition-colors">+62 21 7946 0123</span>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="material-symbols-outlined text-primary-container">distance</span>
+<span class="text-zinc-300 group-hover:text-white transition-colors">Creative Quarter, Jakarta ID</span>
+</div>
+</div>
+</div>
+<div class="flex-grow min-h-[300px] relative overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="dark stylized map of London city showing major landmarks in a monochromatic slate palette" data-location="Jakarta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPCoDER3vg618NAOVVXyQ2kQLNng4p3U7_EFK6LCMOy5hZ8ib-zbhgga4ASGn1SQlvp3dFeNCkb3-T6Ipq6thTmlB9ig7707Uv59o3P0f5_mU16iRwYCnutrokKgJFe9SSnIvYzz4A2q7y_EEyHWLk-X8ik2vXUVjx_VLSxf8w3nrXeel9Nhw3h0yQg5Qb375dWxgmx2AJCCwlt6GC-iP2jAz2oyQUw0RYtXFxolJmfwl-Cxz3V9bAo9DW53sUi-EFVdNSrZldpgY"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 bg-primary-container rounded-full animate-ping opacity-75"></div>
+<div class="w-4 h-4 bg-primary-container rounded-full absolute shadow-[0_0_15px_#FF6A00]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-zinc-950 border-t border-zinc-800">
+<div class="max-w-[1280px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-xl font-black text-orange-600 font-['Epilogue']">OvanZone</div>
+<div class="flex gap-8 font-['Epilogue'] text-sm uppercase tracking-widest">
+<a class="text-zinc-500 hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Instagram</a>
+<a class="text-zinc-500 hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Spotify</a>
+<a class="text-zinc-500 hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Privasi</a>
+<a class="text-zinc-500 hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Ketentuan</a>
+</div>
+<div class="text-zinc-500 font-['Epilogue'] text-sm uppercase tracking-widest text-center md:text-right">
+                © 2024 OVANZONE EVENTS. HAK CIPTA DILINDUNGI.
+            </div>
+</div>
+</footer>
+</body></html>
