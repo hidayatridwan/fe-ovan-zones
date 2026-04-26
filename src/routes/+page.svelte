@@ -109,7 +109,14 @@
 		}
 	];
 
-	const clients = ['SONY MUSIC', 'UNIVERSAL', 'LOCAL FEST', 'WARNER', 'INDIE GIGS', 'EVENT X'];
+	const clients = [
+		'JCLOTH OFFICIAL',
+		'SONY MUSIC',
+		'UNIVERSAL',
+		'LOCAL FEST',
+		'WARNER',
+		'INDIE GIGS'
+	];
 
 	const stats = [
 		{ value: '220+', label: 'Acara Terkurasi' },
@@ -210,7 +217,7 @@
 </script>
 
 <svelte:head>
-	<title>OvanZone | Pengalaman Musik Terbaik</title>
+	<title>OvanZone | Event Organizer Terbaik</title>
 	<meta
 		name="description"
 		content="OvanZone menghadirkan konser, festival, penyewaan alat, dan produksi event musik dengan pengalaman panggung imersif."
@@ -218,7 +225,7 @@
 </svelte:head>
 
 <header
-	class="fixed top-0 z-50 w-full border-b border-white/10 bg-zinc-950/80 shadow-[0_4px_30px_rgba(0,0,0,0.5)] backdrop-blur-lg"
+	class="fixed top-0 z-50 w-full border-b border-orange-100 bg-white/90 shadow-[0_4px_30px_rgba(32,26,23,0.12)] backdrop-blur-lg"
 	use:reveal={{ y: -20, duration: 520 }}
 >
 	<nav class="mx-auto flex h-20 max-w-[1280px] items-center justify-between gap-5 px-5 sm:px-6">
@@ -233,7 +240,7 @@
 		<div class="font-button hidden items-center gap-8 text-sm md:flex">
 			{#each navItems as item (item.href)}
 				<a
-					class="text-zinc-400 transition-colors duration-300 hover:text-orange-500"
+					class="text-zinc-600 transition-colors duration-300 hover:text-orange-500"
 					href={resolve(item.href)}
 				>
 					{item.label}
@@ -245,26 +252,24 @@
 			class="bg-primary-container font-button text-button text-on-primary-container inline-flex min-h-11 items-center justify-center px-4 py-3 font-semibold uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,106,0,0.5)] active:scale-95 sm:px-6"
 			href="#events"
 		>
-			Beli Tiket
+			Sewa Produk
 		</a>
 	</nav>
 </header>
 
-<main class="text-on-surface min-h-screen overflow-hidden bg-[#0B0B0B]">
+<main class="text-on-surface min-h-screen overflow-hidden bg-white">
 	<section
 		class="relative flex min-h-[90svh] items-center justify-center overflow-hidden pt-28 pb-20"
 	>
 		<div class="absolute inset-0 z-0">
 			<img
-				class="hero-ken-burns h-full w-full object-cover opacity-60"
+				class="hero-ken-burns h-full w-full object-cover"
 				alt="Panggung festival musik malam hari dengan sorotan lampu oranye dan ungu serta siluet penonton"
 				src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeg4gKniH7iWdIAIyo5R8pMOV9AoG57fFn17fiybKNoWYY5tDXol7X6qAFNx6kcNsbkrY5KZ_YDxuZK31t4YJrHepPffzoTCb0qBBCLlX7kWzXWtUIZdlu4b2Es0GPpwx2d0GSxWIx6sIJOynqJ_evAS5PqzyUvEuZHiffQu9BxtRtcqapovGsIas1WDZmYR1uoPgPz-Ybaay9o4jlxYq8_Ali2fEIJhGkrN0OHzQPKH6MdUgXLTdaaq3hUFs-ps1JTATOpE7ZZTY"
 			/>
+			<div class="absolute inset-0 bg-gradient-to-b from-white/65 via-white/85 to-white"></div>
 			<div
-				class="absolute inset-0 bg-gradient-to-b from-black/15 via-[#0B0B0B]/45 to-[#0B0B0B]"
-			></div>
-			<div
-				class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0B0B0B] to-transparent"
+				class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent"
 			></div>
 		</div>
 
@@ -274,11 +279,11 @@
 					Konser, festival, dan produksi live
 				</p>
 				<h1
-					class="font-h1 lg:text-h1 mx-auto mb-6 max-w-5xl text-5xl leading-[1.08] font-black text-white uppercase sm:text-6xl"
+					class="font-h1 lg:text-h1 mx-auto mb-6 max-w-5xl text-5xl leading-[1.08] font-black text-zinc-950 uppercase sm:text-6xl"
 				>
-					OVANZONE LIVE EXPERIENCE
+					OVANZONE EVENT ORGANIZER TERBAIK DI INDONESIA
 				</h1>
-				<p class="font-body-lg text-body-lg mx-auto mb-10 max-w-2xl leading-relaxed text-zinc-300">
+				<p class="font-body-lg text-body-lg mx-auto mb-10 max-w-2xl leading-relaxed text-zinc-700">
 					Melampaui batas hiburan langsung. Temukan perjalanan sonik yang dikurasi, visual panggung
 					imersif, dan atmosfer kehidupan malam yang eksklusif.
 				</p>
@@ -295,7 +300,7 @@
 					Jelajahi Acara
 				</a>
 				<a
-					class="font-button text-button hover:border-primary-container/60 inline-flex min-h-14 items-center justify-center border border-white/20 px-8 py-5 font-semibold text-white uppercase transition-all duration-300 hover:bg-white/5 active:scale-95 sm:px-10"
+					class="font-button text-button hover:border-primary-container/60 inline-flex min-h-14 items-center justify-center border border-orange-200 px-8 py-5 font-semibold text-zinc-950 uppercase transition-all duration-300 hover:bg-orange-50 active:scale-95 sm:px-10"
 					href="#history"
 				>
 					Tonton Cuplikan
@@ -303,13 +308,13 @@
 			</div>
 
 			<div
-				class="mx-auto grid max-w-3xl grid-cols-1 border border-white/10 bg-black/35 backdrop-blur-md sm:grid-cols-3"
+				class="mx-auto grid max-w-3xl grid-cols-1 border border-orange-100 bg-white/85 shadow-[0_18px_45px_rgba(32,26,23,0.08)] backdrop-blur-md sm:grid-cols-3"
 				use:reveal={{ y: 26, blur: 8, delay: 280, duration: 760 }}
 			>
 				{#each stats as stat (stat.label)}
-					<div class="border-white/10 px-6 py-5 text-left sm:border-l sm:first:border-l-0">
-						<p class="font-h3 text-3xl font-bold text-white">{stat.value}</p>
-						<p class="font-body-md mt-1 text-sm text-zinc-400">{stat.label}</p>
+					<div class="border-orange-100 px-6 py-5 text-left sm:border-l sm:first:border-l-0">
+						<p class="font-h3 text-3xl font-bold text-zinc-950">{stat.value}</p>
+						<p class="font-body-md mt-1 text-sm text-zinc-600">{stat.label}</p>
 					</div>
 				{/each}
 			</div>
@@ -324,7 +329,7 @@
 					<p class="font-button text-primary-container mb-3 text-sm font-semibold uppercase">
 						Lineup terkurasi
 					</p>
-					<h2 class="font-h2 md:text-h2 text-4xl font-bold text-white uppercase">
+					<h2 class="font-h2 md:text-h2 text-4xl font-bold text-zinc-950 uppercase">
 						Acara Mendatang
 					</h2>
 					<div class="bg-primary-container mt-4 h-1 w-24"></div>
@@ -340,7 +345,7 @@
 			<div class="gap-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 				{#each eventCards as event, index (event.title)}
 					<article
-						class="neon-glow-hover group relative overflow-hidden bg-[#1F1F1F] transition-all duration-500"
+						class="neon-glow-hover group overflow-hidden border border-orange-100 bg-white shadow-[0_18px_45px_rgba(32,26,23,0.08)] transition-all duration-500"
 						use:reveal={cardMotion(index)}
 					>
 						<div class="aspect-[3/4] overflow-hidden">
@@ -351,23 +356,20 @@
 								loading="lazy"
 							/>
 						</div>
-						<div
-							class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent opacity-90"
-						></div>
-						<div class="absolute bottom-0 w-full p-6">
+						<div class="p-6">
 							<div class="mb-3 flex flex-wrap gap-2">
 								{#each event.tags as tag, tagIndex (tag)}
 									<span
 										class={tagIndex === 0
 											? 'bg-primary-container text-on-primary-container px-2 py-1 text-[10px] font-bold uppercase'
-											: 'bg-zinc-800 px-2 py-1 text-[10px] font-bold text-white uppercase'}
+											: 'bg-orange-50 px-2 py-1 text-[10px] font-bold text-orange-700 uppercase'}
 									>
 										{tag}
 									</span>
 								{/each}
 							</div>
-							<h3 class="font-h3 mb-1 text-xl font-bold text-white">{event.title}</h3>
-							<p class="font-label-sm flex items-center gap-1 text-sm text-zinc-400 uppercase">
+							<h3 class="font-h3 mb-1 text-xl font-bold text-zinc-950">{event.title}</h3>
+							<p class="font-label-sm flex items-center gap-1 text-sm text-zinc-600 uppercase">
 								<span class="material-symbols-outlined text-sm" aria-hidden="true">
 									calendar_today
 								</span>
@@ -380,7 +382,7 @@
 		</div>
 	</section>
 
-	<section class="py-xl bg-[#0B0B0B]" id="history" use:reveal={revealPresets[1]}>
+	<section class="py-xl bg-white" id="history" use:reveal={revealPresets[1]}>
 		<div class="mx-auto max-w-[1280px] px-5 sm:px-6">
 			<div
 				class="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
@@ -390,7 +392,7 @@
 					<p class="font-button text-primary-container mb-3 text-sm font-semibold uppercase">
 						Rekam jejak
 					</p>
-					<h2 class="font-h2 md:text-h2 text-4xl font-bold text-white uppercase">
+					<h2 class="font-h2 md:text-h2 text-4xl font-bold text-zinc-950 uppercase">
 						Momen Legendaris
 					</h2>
 				</div>
@@ -404,7 +406,7 @@
 
 			<div class="relative">
 				<div
-					class="absolute left-1/2 hidden h-full w-px -translate-x-1/2 bg-white/10 md:block"
+					class="absolute left-1/2 hidden h-full w-px -translate-x-1/2 bg-orange-100 md:block"
 				></div>
 				<div class="space-y-md">
 					{#each historyItems as item, index (item.title)}
@@ -423,10 +425,10 @@
 									<p class="font-body-md text-primary-container mb-2 text-sm font-bold uppercase">
 										{item.season}
 									</p>
-									<h3 class="font-h3 mb-2 text-xl font-bold text-white uppercase">
+									<h3 class="font-h3 mb-2 text-xl font-bold text-zinc-950 uppercase">
 										{item.title}
 									</h3>
-									<p class="text-sm leading-relaxed text-zinc-400">{item.description}</p>
+									<p class="text-sm leading-relaxed text-zinc-600">{item.description}</p>
 								</div>
 							</div>
 							<div class="md:w-1/2">
@@ -444,13 +446,13 @@
 		</div>
 	</section>
 
-	<section class="py-xl relative bg-[#0B0B0B]" id="services" use:reveal={revealPresets[2]}>
+	<section class="py-xl relative bg-white" id="services" use:reveal={revealPresets[2]}>
 		<div class="mx-auto max-w-[1280px] px-5 sm:px-6">
 			<div class="mb-12 max-w-2xl" use:reveal={{ x: -36, blur: 8, duration: 720 }}>
 				<p class="font-button text-primary-container mb-3 text-sm font-semibold uppercase">
 					Produksi end-to-end
 				</p>
-				<h2 class="font-h2 md:text-h2 text-4xl font-bold text-white uppercase">Layanan Kami</h2>
+				<h2 class="font-h2 md:text-h2 text-4xl font-bold text-zinc-950 uppercase">Layanan Kami</h2>
 			</div>
 
 			<div class="gap-gutter grid grid-cols-1 md:grid-cols-2">
@@ -467,8 +469,8 @@
 							</span>
 						</div>
 						<div>
-							<h3 class="font-h3 mb-3 text-2xl font-bold text-white">{service.title}</h3>
-							<p class="leading-relaxed text-zinc-400">{service.description}</p>
+							<h3 class="font-h3 mb-3 text-2xl font-bold text-zinc-950">{service.title}</h3>
+							<p class="leading-relaxed text-zinc-600">{service.description}</p>
 						</div>
 					</article>
 				{/each}
@@ -476,14 +478,14 @@
 		</div>
 	</section>
 
-	<section class="py-xl bg-[#0B0B0B]" id="clients" use:reveal={revealPresets[3]}>
+	<section class="py-xl bg-white" id="clients" use:reveal={revealPresets[3]}>
 		<div class="mx-auto max-w-[1280px] px-5 sm:px-6">
 			<div class="mb-12 max-w-3xl">
 				<p class="font-button text-primary-container mb-3 text-sm font-semibold uppercase">
 					Kolaborasi
 				</p>
-				<h2 class="font-h2 md:text-h2 text-4xl font-bold text-white uppercase">Klien Kami</h2>
-				<p class="font-body-md mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400">
+				<h2 class="font-h2 md:text-h2 text-4xl font-bold text-zinc-950 uppercase">Klien Kami</h2>
+				<p class="font-body-md mt-4 max-w-2xl text-sm leading-relaxed text-zinc-600">
 					Dipercaya oleh label, promotor, kolektif kreatif, dan brand experience untuk menghadirkan
 					produksi yang tajam.
 				</p>
@@ -496,7 +498,7 @@
 						use:reveal={cardMotion(index)}
 					>
 						<div
-							class="hover:border-primary-container/60 w-full border-2 border-white/20 px-3 py-4 text-center text-sm font-bold text-white transition-colors duration-300"
+							class="hover:border-primary-container/60 w-full border-2 border-orange-100 bg-white px-3 py-4 text-center text-sm font-bold text-zinc-700 transition-colors duration-300"
 						>
 							{client}
 						</div>
@@ -506,31 +508,31 @@
 		</div>
 	</section>
 
-	<section class="py-xl bg-[#0B0B0B]" id="contact" use:reveal={revealPresets[4]}>
+	<section class="py-xl bg-white" id="contact" use:reveal={revealPresets[4]}>
 		<div class="mx-auto max-w-[1280px] px-5 sm:px-6">
 			<div class="gap-margin flex flex-col lg:flex-row">
 				<div class="lg:w-1/2" use:reveal={{ x: -42, blur: 8, duration: 760 }}>
 					<p class="font-button text-primary-container mb-3 text-sm font-semibold uppercase">
 						Mulai produksi
 					</p>
-					<h2 class="font-h2 md:text-h2 mb-8 text-4xl font-bold text-white uppercase">
+					<h2 class="font-h2 md:text-h2 mb-8 text-4xl font-bold text-zinc-950 uppercase">
 						Hubungi Kami
 					</h2>
 					<form class="space-y-6" aria-label="Form kontak OvanZone">
 						<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 							<label class="block">
-								<span class="font-label-sm mb-2 block text-sm text-zinc-500 uppercase">Nama</span>
+								<span class="font-label-sm mb-2 block text-sm text-zinc-600 uppercase">Nama</span>
 								<input
-									class="focus:border-primary-container w-full border border-white/10 bg-[#1F1F1F] px-4 py-4 text-white transition-colors focus:outline-none"
+									class="focus:border-primary-container w-full border border-orange-100 bg-white px-4 py-4 text-zinc-950 transition-colors focus:outline-none"
 									type="text"
 									name="name"
 									autocomplete="name"
 								/>
 							</label>
 							<label class="block">
-								<span class="font-label-sm mb-2 block text-sm text-zinc-500 uppercase">Email</span>
+								<span class="font-label-sm mb-2 block text-sm text-zinc-600 uppercase">Email</span>
 								<input
-									class="focus:border-primary-container w-full border border-white/10 bg-[#1F1F1F] px-4 py-4 text-white transition-colors focus:outline-none"
+									class="focus:border-primary-container w-full border border-orange-100 bg-white px-4 py-4 text-zinc-950 transition-colors focus:outline-none"
 									type="email"
 									name="email"
 									autocomplete="email"
@@ -538,11 +540,11 @@
 							</label>
 						</div>
 						<label class="block">
-							<span class="font-label-sm mb-2 block text-sm text-zinc-500 uppercase">
+							<span class="font-label-sm mb-2 block text-sm text-zinc-600 uppercase">
 								Tipe Proyek
 							</span>
 							<select
-								class="focus:border-primary-container w-full border border-white/10 bg-[#1F1F1F] px-4 py-4 text-white transition-colors focus:outline-none"
+								class="focus:border-primary-container w-full border border-orange-100 bg-white px-4 py-4 text-zinc-950 transition-colors focus:outline-none"
 								name="project_type"
 							>
 								<option>Produksi Konser</option>
@@ -551,9 +553,9 @@
 							</select>
 						</label>
 						<label class="block">
-							<span class="font-label-sm mb-2 block text-sm text-zinc-500 uppercase">Pesan</span>
+							<span class="font-label-sm mb-2 block text-sm text-zinc-600 uppercase">Pesan</span>
 							<textarea
-								class="focus:border-primary-container min-h-36 w-full border border-white/10 bg-[#1F1F1F] px-4 py-4 text-white transition-colors focus:outline-none"
+								class="focus:border-primary-container min-h-36 w-full border border-orange-100 bg-white px-4 py-4 text-zinc-950 transition-colors focus:outline-none"
 								name="message"
 							></textarea>
 						</label>
@@ -569,13 +571,13 @@
 				<div class="flex flex-col gap-6 lg:w-1/2" use:reveal={{ x: 42, blur: 8, duration: 760 }}>
 					<div class="glass-card flex flex-grow flex-col gap-10 p-6 md:flex-row md:p-8">
 						<div class="space-y-6">
-							<h3 class="font-h3 text-xl font-bold text-white uppercase">Detail Kontak</h3>
+							<h3 class="font-h3 text-xl font-bold text-zinc-950 uppercase">Detail Kontak</h3>
 							<div class="space-y-4">
 								<a class="group flex items-center gap-4" href="mailto:hello@ovanzone.events">
 									<span class="material-symbols-outlined text-primary-container" aria-hidden="true">
 										mail
 									</span>
-									<span class="text-zinc-300 transition-colors group-hover:text-white">
+									<span class="text-zinc-700 transition-colors group-hover:text-orange-600">
 										hello@ovanzone.events
 									</span>
 								</a>
@@ -583,7 +585,7 @@
 									<span class="material-symbols-outlined text-primary-container" aria-hidden="true">
 										call
 									</span>
-									<span class="text-zinc-300 transition-colors group-hover:text-white">
+									<span class="text-zinc-700 transition-colors group-hover:text-orange-600">
 										+62 21 7946 0123
 									</span>
 								</a>
@@ -591,7 +593,7 @@
 									<span class="material-symbols-outlined text-primary-container" aria-hidden="true">
 										distance
 									</span>
-									<span class="text-zinc-300">Creative Quarter, Jakarta ID</span>
+									<span class="text-zinc-700">Creative Quarter, Jakarta ID</span>
 								</div>
 							</div>
 						</div>
@@ -606,7 +608,7 @@
 									class="bg-primary-container absolute size-5 rounded-[999px] shadow-[0_0_15px_#FF6A00]"
 								></div>
 								<div
-									class="absolute mt-24 bg-black/70 px-3 py-2 text-xs font-semibold text-white uppercase"
+									class="absolute mt-24 border border-orange-100 bg-white/90 px-3 py-2 text-xs font-semibold text-zinc-950 uppercase"
 								>
 									Jakarta HQ
 								</div>
@@ -619,20 +621,26 @@
 	</section>
 </main>
 
-<footer class="border-t border-zinc-800 bg-zinc-950">
+<footer class="border-t border-orange-100 bg-white">
 	<div
 		class="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-6 px-5 py-12 md:flex-row md:px-8"
 	>
 		<a class="font-h1 text-xl font-black text-orange-600" href={resolve('/')}>OvanZone</a>
 		<div class="font-button flex flex-wrap justify-center gap-6 text-sm uppercase md:gap-8">
-			<a class="text-zinc-500 transition-all hover:text-white" href="https://www.instagram.com/">
+			<a
+				class="text-zinc-600 transition-all hover:text-orange-600"
+				href="https://www.instagram.com/"
+			>
 				Instagram
 			</a>
-			<a class="text-zinc-500 transition-all hover:text-white" href="https://open.spotify.com/">
+			<a
+				class="text-zinc-600 transition-all hover:text-orange-600"
+				href="https://open.spotify.com/"
+			>
 				Spotify
 			</a>
-			<a class="text-zinc-500 transition-all hover:text-white" href="#contact">Privasi</a>
-			<a class="text-zinc-500 transition-all hover:text-white" href="#contact">Ketentuan</a>
+			<a class="text-zinc-600 transition-all hover:text-orange-600" href="#contact">Privasi</a>
+			<a class="text-zinc-600 transition-all hover:text-orange-600" href="#contact">Ketentuan</a>
 		</div>
 		<p class="font-button text-center text-sm text-zinc-500 uppercase md:text-right">
 			© 2026 OvanZone Events. Hak cipta dilindungi.
