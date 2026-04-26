@@ -9,32 +9,32 @@
 	--color-tertiary-fixed: #f4efec;
 	--color-on-error-container: #410002;
 	--color-secondary-container: #f0e7e2;
-	--color-primary-container: #ff6a00;
+	--color-primary-container: #da3521;
 	--color-inverse-surface: #342e2b;
-	--color-primary-fixed-dim: #ffb694;
+	--color-primary-fixed-dim: #ef8a7d;
 	--color-on-tertiary-fixed: #201a17;
-	--color-primary: #a14000;
+	--color-primary: #da3521;
 	--color-on-secondary: #ffffff;
 	--color-secondary-fixed: #f4efec;
 	--color-error: #ba1a1a;
 	--color-on-tertiary: #ffffff;
 	--color-inverse-on-surface: #fff7f2;
-	--color-on-primary-container: #571f00;
-	--color-primary-fixed: #ffdbcc;
+	--color-on-primary-container: #ffffff;
+	--color-primary-fixed: #fddbd6;
 	--color-on-tertiary-container: #201a17;
-	--color-on-primary-fixed: #351000;
+	--color-on-primary-fixed: #410001;
 	--color-background: #ffffff;
-	--color-on-primary: #571f00;
+	--color-on-primary: #ffffff;
 	--color-on-secondary-container: #51433c;
 	--color-outline: #d7c8bf;
 	--color-on-secondary-fixed: #201a17;
 	--color-surface: #ffffff;
-	--color-on-primary-fixed-variant: #7b2f00;
+	--color-on-primary-fixed-variant: #8c1d18;
 	--color-on-secondary-fixed-variant: #51433c;
 	--color-tertiary: #635c57;
 	--color-surface-container-lowest: #ffffff;
 	--color-secondary: #6d625d;
-	--color-surface-tint: #ff6a00;
+	--color-surface-tint: #da3521;
 	--color-on-error: #690005;
 	--color-surface-variant: #f0e7e2;
 	--color-tertiary-fixed-dim: #ddd7d3;
@@ -46,7 +46,7 @@
 	--color-outline-variant: #eadbd2;
 	--color-surface-container-low: #fffaf7;
 	--color-tertiary-container: #eee8e4;
-	--color-inverse-primary: #a14000;
+	--color-inverse-primary: #da3521;
 	--color-on-background: #201a17;
 	--color-surface-dim: #f4efec;
 
@@ -116,18 +116,18 @@ textarea {
 :where(.glass-card) {
 	background: rgba(255, 255, 255, 0.88);
 	backdrop-filter: blur(20px);
-	border: 1px solid rgba(255, 106, 0, 0.14);
+	border: 1px solid rgba(218, 53, 33, 0.14);
 	box-shadow: 0 18px 45px rgba(32, 26, 23, 0.08);
 }
 
 .neon-glow-hover:hover {
-	box-shadow: 0 0 30px rgba(255, 106, 0, 0.3);
+	box-shadow: 0 0 30px rgba(218, 53, 33, 0.3);
 }
 
 .stage-glow {
 	background: radial-gradient(
 		circle at 50% 50%,
-		rgba(255, 106, 0, 0.08) 0%,
+		rgba(218, 53, 33, 0.08) 0%,
 		rgba(255, 255, 255, 0) 70%
 	);
 }
@@ -141,7 +141,7 @@ textarea {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-	background: #ff6a00;
+	background: #da3521;
 }
 
 .hero-ken-burns {
@@ -151,9 +151,9 @@ textarea {
 
 .map-panel {
 	background:
-		linear-gradient(90deg, rgba(255, 106, 0, 0.08) 1px, transparent 1px),
-		linear-gradient(0deg, rgba(255, 106, 0, 0.08) 1px, transparent 1px),
-		linear-gradient(135deg, rgba(255, 106, 0, 0.2), rgba(255, 232, 219, 0.72)), #fff8f2;
+		linear-gradient(90deg, rgba(218, 53, 33, 0.08) 1px, transparent 1px),
+		linear-gradient(0deg, rgba(218, 53, 33, 0.08) 1px, transparent 1px),
+		linear-gradient(135deg, rgba(218, 53, 33, 0.2), rgba(253, 219, 214, 0.72)), #fff8f2;
 	background-size:
 		44px 44px,
 		44px 44px,
@@ -165,7 +165,7 @@ textarea {
 .map-panel::after {
 	position: absolute;
 	content: '';
-	background: rgba(255, 106, 0, 0.22);
+	background: rgba(218, 53, 33, 0.22);
 	transform-origin: left center;
 }
 
